@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="plunker" >
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS Plunker</title>
+  <script>document.write('<base href="' + document.location + '" />');</script>
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bower_components/font-awesome-4.6.3/css/font-awesome.min.css" />
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script> -->
+    <script src="bower_components/angular/angular.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="MainCtrl"> 
+    <!-- group -->
+    <ul > 
+        <li ng-repeat="item in data.group" ng-include="'tree.html'"></li>
+    </ul>
+</body>
+</html>

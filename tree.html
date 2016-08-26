@@ -1,0 +1,82 @@
+<div class="li-item">
+	<div class="itemArrow" ng-click="item.open =! item.open" ng-class="{'opened':item.open}"></div>
+	<div class="checkBox" ng-click="itemCheck(item)" ng-class="{'checked':item.checked}"></div>
+	<div class="itemName">{{item.info.name}}</div>
+</div>
+<ul ng-class="{'list-open':item.open}"> 
+	<!-- Group -->
+	<li ng-if="item.children.group.length > 0">
+		<div class="li-item" >
+			<div class="itemArrow" ng-click="item.children.group.open =! item.children.group.open" ng-class="{'opened':item.children.group.open}"></div>
+			<div class="checkBox" ng-click="item.children.group.checked =! item.children.group.checked" ng-class="{'checked':item.children.group.checked}"></div>
+			<div class="itemName">Group</div>
+		</div>
+	</li>
+	<ul ng-if="item.children.group.length > 0" ng-class="{'list-open':item.children.group.open}">
+		<li ng-repeat="item in item.children.group" ng-include="'tree.html'"></li>
+	</ul>
+	<!-- user -->
+	<li ng-if="item.children.user.length > 0" >
+		<div class="li-item" >
+			<div class="itemArrow" ng-click="item.children.user.open =! item.children.user.open" ng-class="{'opened':item.children.user.open}"></div>
+			<div class="checkBox" ng-click="item.children.user.checked =! item.children.user.checked" ng-class="{'checked':item.children.user.checked}"></div>
+			<div class="itemName">User</div>
+		</div>
+	</li>
+	<ul ng-if="item.children.user.length > 0"  ng-class="{'list-open':item.children.user.open}">
+		<li ng-repeat="item in item.children.user">
+            <div class="li-item lastNode"> 
+				<div class="checkBox" ng-click="itemCheck(item)" ng-class="{'checked':item.checked}"></div>
+				<div class="itemName">{{item.info.name}}</div>
+			</div>
+        </li>
+	</ul>
+	<!-- role -->
+	<li ng-if="item.children.role.length > 0">
+		<div class="li-item"  >
+			<div class="itemArrow" ng-click="item.children.role.open =! item.children.role.open" ng-class="{'opened':item.children.role.open}"></div>
+			<div class="checkBox"  ng-click="itemCheck(item.children.role)" ng-class="{'checked':item.children.role.checked}"></div>
+			<div class="itemName">Role</div>
+		</div>
+	</li>
+	<ul ng-if="item.children.role.length > 0"  ng-class="{'list-open':item.children.role.open}">
+		<li ng-repeat="item in item.children.role">
+            <div class="li-item lastNode"> 
+				<div class="checkBox" ng-click="itemCheck(item)" ng-class="{'checked':item.checked}"></div>
+				<div class="itemName">{{item.info.name}}</div>
+			</div>
+        </li>
+	</ul>
+	<!-- vehicle -->
+	<li ng-if="item.children.vehicle.length > 0">
+		<div class="li-item" >
+			<div class="itemArrow" ng-click="item.children.vehicle.open =! item.children.vehicle.open" ng-class="{'opened':item.children.vehicle.open}"></div>
+			<div class="checkBox"  ng-click="itemCheck(item.children.vehicle)" ng-class="{'checked':item.children.vehicle.checked}"></div>
+			<div class="itemName">Vehicle</div>
+		</div>
+	</li>
+	<ul ng-if="item.children.vehicle.length > 0"  ng-class="{'list-open':item.children.vehicle.open}">
+		<li ng-repeat="item in item.children.vehicle">
+            <div class="li-item lastNode"> 
+				<div class="checkBox" ng-click="itemCheck(item)" ng-class="{'checked':item.checked}"></div>
+				<div class="itemName">{{item.info.name}}</div>
+			</div>
+        </li>
+	</ul>
+	<!-- device -->
+	<li ng-if="item.children.device.length > 0">
+		<div class="li-item" >
+			<div class="itemArrow" ng-click="item.children.device.open =! item.children.device.open" ng-class="{'opened':item.children.device.open}"></div>
+			<div class="checkBox"  ng-click="itemCheck(item.children.device)" ng-class="{'checked':item.children.device.checked}"></div>
+			<div class="itemName">Device</div>
+		</div>
+	</li>
+	<ul ng-if="item.children.device.length > 0"  ng-class="{'list-open':item.children.device.open}">
+		<li ng-repeat="item in item.children.device">
+            <div class="li-item lastNode"> 
+				<div class="checkBox" ng-click="itemCheck(item)" ng-class="{'checked':item.checked}"></div>
+				<div class="itemName">{{item.info.name}}</div>
+			</div>
+        </li>
+	</ul>
+</ul>
